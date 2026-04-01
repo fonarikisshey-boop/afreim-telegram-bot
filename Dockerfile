@@ -8,15 +8,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements and install Python dependencies
-COPY telegram_bot/requirements.txt .
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy bot code
-COPY telegram_bot/ .
+COPY . .
 
-# Environment variables
-ENV BOT_TOKEN=8625296525:AAGpvAUNIQvZRP1ZwaS5JNPOQyibziFRg6s
-ENV WEBAPP_URL=https://afreim-calendar.onrender.com
+# Environment variables (set in Railway)
+ENV BOT_TOKEN=${BOT_TOKEN}
+ENV WEBAPP_URL=${WEBAPP_URL}
 
 # Run bot
 CMD ["python3", "bot.py"]
