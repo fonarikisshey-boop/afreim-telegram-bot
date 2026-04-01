@@ -9,7 +9,7 @@ from telegram.ext import (
     Application, CommandHandler, CallbackQueryHandler, ContextTypes
 )
 
-BOT_TOKEN = os.getenv("BOT_TOKEN", "8625296525:AAGpvAUNIQvZRP1ZwaS5JNPOQyibziFRg6s")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 WEBAPP_URL = os.getenv("WEBAPP_URL", "https://afreim-calendar.onrender.com")
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
